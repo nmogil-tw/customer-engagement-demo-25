@@ -1,7 +1,7 @@
 > [!NOTE]
 > Twilio AI Assistants is a [Twilio Alpha](https://twilioalpha.com) project that is currently in Developer Preview.
 
-# Twilio AI Assistant Deployment Tool - Owl Shoes
+# Twilio AI Assistant Deployment Tool - Owl Shoes - Customer Engagement Demo 25'
 
 A modular tool for deploying a Twilio AI Assistant with pre-configured tools and knowledge bases. This project provides a structured way to create and configure an AI Assistant for retail customer service.
 
