@@ -1,0 +1,13 @@
+# Node modules if it's a JavaScript project
+node_modules/
+
+# Build directories
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+
+# System files
+.DS_Store 
