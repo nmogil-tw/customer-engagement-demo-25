@@ -72,6 +72,9 @@ exports.handler = async function(context, event, callback) {
         
         if(data && data.interactions && data.interactions.length > 0) {
             console.log("Found", data.interactions.length, "interactions");
+            // TODO: Use the Timeline API to fetch any notes associated with these open interactions
+            // Example: For each interaction, call Timeline API with the interaction SID to get associated notes
+            // This will provide additional context about each interaction's history
             return callback(null, data);
         }
         console.log("No interactions found");

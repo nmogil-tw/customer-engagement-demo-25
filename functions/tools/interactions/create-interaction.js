@@ -71,6 +71,14 @@ exports.handler = async function(context, event, callback) {
         const data = response.data;
         if(data) {
             console.log("Created Interaction", JSON.stringify(data))
+            
+            // TODO: Add functionality to create timeline entry
+            // Steps to implement:
+            // 1. Get the interaction SID from data
+            // 2. Create a new timeline entry using the Timeline API
+            // 3. Associate the timeline entry with this interaction
+            // 4. Handle any potential errors in timeline creation
+            
             return callback(null, data);
         }
         return callback(null, null); 

@@ -6,6 +6,10 @@ exports.handler = async function(context, event, callback) {
         console.log('event', event);
         console.log('status', event.status);
         console.log('interaction', event.interaction);
+        
+        // TODO: Add functionality to create a note associated with this interaction
+        // This could include details about why the interaction was closed or any final comments
+        
         // Temporary small delay until everything is hooked up
         const response = await updateInteraction(
             context.ACCOUNT_SID,
