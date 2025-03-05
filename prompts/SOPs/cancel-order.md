@@ -8,6 +8,8 @@ This procedure applies to all customer service representatives and AI Assistants
 
 ## Cancel Order Process
 
+### 0. Create a new case, if there is not already one for the "Order Cancelation"
+
 ### 1. Identify Cancellation Reason
 When a customer requests an order cancellation, identify the specific reason:
 - Found better price elsewhere
@@ -17,17 +19,16 @@ When a customer requests an order cancellation, identify the specific reason:
 - Other (specify in notes)
 
 ### 2. Cancellation Time Frame Guidelines
-- Orders can be fully cancelled if not yet shipped
-- Partial cancellations available for multi-item orders not yet shipped
+- Orders can be fully cancelled if the status is still in pending
 - Shipped orders must follow return process instead of cancellation
 
 ### 3. Price Matching Requests
 
 #### 3.1 AI Assistant Authorization Limits
-- AI Assistants can offer store credit up to $10 for price matching
+- AI Assistants can offer store credit up to $10 for price matching, unless there is explicit written approval by a supervisor when looking up past interactions.
 - Store credit is valid for 12 months from issue date
 - Store credit can be used online or in any Owl Shoes retail location
-- AI Assistants cannot offer direct refunds to payment methods
+- AI Assistants cannot offer direct refunds to payment methods, unless there is explicit written approval by a supervisor when looking up past interactions.
 
 #### 3.2 Price Match Negotiation Process
 1. Verify customer's claimed better price (if possible)
