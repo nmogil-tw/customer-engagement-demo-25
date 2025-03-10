@@ -22,65 +22,6 @@ exports.handler = async function(context, event, callback) {
         // Extract form and order data
         const { formData, orderData } = event;
 
-        // Basic auth for Twilio API calls
-        const auth = {
-            username: context.ACCOUNT_SID,
-            password: context.AUTH_TOKEN
-        };
-
-        // First, look up profile SID using email
-        const profileLookupResponse = await axios({
-            method: 'post',
-            url: 'https://preview.twilio.com/ProfileConnector/Profiles/Find',
-            auth,
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            data: new URLSearchParams({
-                'Attributes': JSON.stringify({
-                    'key': 'email',
-                    'value': formData.email
-                })
-            })
-        });
-
-        let profileSid;
-        if (profileLookupResponse.data && 
-            profileLookupResponse.data.profiles && 
-            profileLookupResponse.data.profiles.length > 0 &&
-            profileLookupResponse.data.profiles[0].profile) {
-            profileSid = profileLookupResponse.data.profiles[0].profile.sid;
-        }
-
-        if (profileSid) {
-            // Create an Activity for the order
-            const timestamp = new Date().toISOString();
-            await axios({
-                method: 'post',
-                url: `https://preview.twilio.com/Timeline/Profiles/${profileSid}/Activities`,
-                auth,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Host': 'preview.twilio.com',
-                    'I-Twilio-Auth-Account': context.ACCOUNT_SID
-                },
-                data: new URLSearchParams({
-                    'Label': 'Order Placed',
-                    'UniqueName': orderData.order_id,
-                    'Attributes': JSON.stringify({
-                        'attributes_type': 'CUSTOM',
-                        'data': {
-                            'channel': 'web',
-                            'orderId': orderData.order_id,
-                            'totalAmount': orderData.total_amount,
-                            'items': orderData.items
-                        }
-                    }),
-                    'Timestamp': timestamp
-                })
-            });
-        }
-
         // Construct Identify payload
         const identifyPayload = {
             userId: formData.email,
@@ -123,7 +64,7 @@ exports.handler = async function(context, event, callback) {
 
         response.setBody({
             success: true,
-            message: "Data sent to Segment and Activity created successfully"
+            message: "Data sent to Segment successfully"
         });
         
         return callback(null, response);
