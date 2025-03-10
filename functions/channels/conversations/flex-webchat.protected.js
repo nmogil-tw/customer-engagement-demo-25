@@ -41,7 +41,7 @@ const {
       );
     }
   
-    let identity = Author.includes(":") ? Author : `user_id:${Author}`;
+    let identity = Author.includes(":") ? Author : `email:${Author}`;
     if (Author.startsWith("FX")) {
       // User is a Flex Web Chat Conversation Participant
       identity = `flex_participant:${Author}`;

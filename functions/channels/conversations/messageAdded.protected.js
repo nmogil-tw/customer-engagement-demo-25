@@ -19,7 +19,7 @@ const {
         ? event.AssistantIdentity
         : undefined;
   
-    let identity = Author.includes(":") ? Author : `user_id:${Author}`;
+    let identity = Author.includes(":") ? Author : `email:${Author}`;
   
     const client = context.getTwilioClient();
   
